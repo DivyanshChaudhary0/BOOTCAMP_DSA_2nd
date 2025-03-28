@@ -1,0 +1,32 @@
+
+Date - 09/01/2025
+Revise strings - [
+    1) reverse strings
+    2) palindrome strings
+    3) count vowel,consonent & spaces
+    4) Toggle characters - Lowecase to uppercase & uppercase to Lowecase
+    5) count the valid words in a string (implement startWith function myself in this)
+    6) Split and Change - uppercase all first letters [with split & without using split]
+    7) count frequency of each character
+    8) check anagrams
+    9) sort the words of sentences
+]
+
+Date - 09/01/2025
+Questions By Harsh Bhaiya - [
+    1) Reverse a String
+    2) Implement a function to check a String is plaindrome or not
+    3) WAF to find the max and min value in the Array
+    4) Create a function that remove dupcilates from the Array
+    5) Implement a function to count the occurrences of each character in a string
+    6) Write a function if two strings are anagram
+    7) Merge two sorted Arrays into single sorted array
+    8) Find factorial of a number using recursion
+    9) Generate the fibonacci series to n terms
+    10) WAF to check a number is prime or not
+]
+
+Date - 10/01/2025 [
+    1) Left rotation by K steps
+    2) Right rotation by K steps
+]
