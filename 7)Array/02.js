@@ -289,11 +289,26 @@
 // }
 
 //find unique elements by set
-let arr = [1,1,2,3,4,5,6,5,4,3];
-let set = new Set();
-for(let i=0;i<arr.length;i++){
-    if(set.has(arr[i])){
+// let arr = [1,1,2,3,4,5,6,5,4,3];
+// let set = new Set();
+// for(let i=0;i<arr.length;i++){
+//     if(set.has(arr[i])){
         
+//     }
+//     else set.add(arr[i]);
+// }.
+
+let arr = [0,-1,8,-6,2,-3,8,-4];
+let i=arr.length-1, j=i;
+
+while(j>0){
+    if(arr[j]<0){
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+        i--;
     }
-    else set.add(arr[i]);
+    j--;
 }
+
+console.log(arr);
