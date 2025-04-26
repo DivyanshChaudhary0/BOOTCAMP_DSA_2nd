@@ -45,16 +45,48 @@
 // console.log(arr);
 
 
-let str = ["hello","bhai","kaise","ho"]
-let ans = [];
+// let str = ["hello","bhai","kaise","ho"]
+// let ans = [];
 
-for(let i=0; i<str.length; i++){
-    let word = str[i];
-    let temp = "";
-    temp += word[0].toUpperCase();
-    temp += word.substring(1,word.length-1);
-    temp += word[word.length-1].toUpperCase();
-    str[i] = temp;
-}
+// for(let i=0; i<str.length; i++){
+//     let word = str[i];
+//     let temp = "";
+//     temp += word[0].toUpperCase();
+//     temp += word.substring(1,word.length-1);
+//     temp += word[word.length-1].toUpperCase();
+//     str[i] = temp;
+// }
 
-console.log(str.join(" "));
+// console.log(str.join(" "));
+
+// let str = "Bhola";
+// let rev = "";
+
+// for(let i=str.length-1; i>=0; i--){
+//     rev += str[i];
+// }
+
+// console.log(rev);
+
+// let str = "naman";
+// let i=0,j=str.length-1;
+// let isPalindrome = true;
+
+// while(i<j){
+//     if(str[i] !== str[j])  isPalindrome = false;
+//     i++;
+//     j--;
+// }
+
+// console.log(isPalindrome);
+
+
+// let str = "shEEtal";
+// let newStr = "";
+// for(let i=0; i<str.length; i++){
+//     let ascii = str.charCodeAt(i);
+//     if(ascii >= 65 && ascii <= 90) newStr += String.fromCharCode(ascii+32);
+//     else newStr += String.fromCharCode(ascii-32);
+// }
+
+// console.log(newStr);
