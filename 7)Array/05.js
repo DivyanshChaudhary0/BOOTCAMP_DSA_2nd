@@ -114,18 +114,32 @@
 
 // console.log(arr.join(" "));
 
-let str = "Sheetal";
-let arr = new Array(128).fill(0);
+// let str = "Sheetal";
+// let arr = new Array(128).fill(0);
+
+// for(let i=0; i<str.length; i++){
+//     let ascii = str.charCodeAt(i);
+//     arr[ascii] = arr[ascii] + 1;
+// }
+
+// let i=0;
+// arr.forEach(val => {
+//     if(val !== 0){
+//         console.log(String.fromCharCode(i) + " => " + val);
+//     }
+//     i++;
+// })
+
+let str = "Sheetal"
+let map = new Map();
 
 for(let i=0; i<str.length; i++){
-    let ascii = str.charCodeAt(i);
-    arr[ascii] = arr[ascii] + 1;
+    if(map.has(str[i])){
+        map.set(str[i], map.get(str[i]) + 1);
+    }
+    else map.set(str[i], 1);
 }
 
-let i=0;
-arr.forEach(val => {
-    if(val !== 0){
-        console.log(String.fromCharCode(i) + " => " + val);
-    }
-    i++;
-})
+for(let key of map.keys()){
+    console.log(key + " => " + map.get(key));
+}
