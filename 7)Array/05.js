@@ -91,14 +91,41 @@
 
 // console.log(newStr);
 
-let words = ["pay","attention","practice","attend"]
-let pref = "at"
-let count = 0;
+// let words = ["pay","attention","practice","attend"]
+// let pref = "at"
+// let count = 0;
 
-for(let i=0; i<words.length; i++){
-    let word = words[i];
-    // if(word.startsWith(pref)) count++;
-    if(word.substring(0,2) === pref) count++;
+// for(let i=0; i<words.length; i++){
+//     let word = words[i];
+//     // if(word.startsWith(pref)) count++;
+//     if(word.substring(0,2) === pref) count++;
+// }
+
+// console.log(count);
+
+// let str = "Hello bhai Kaise ho a";
+// let arr = str.split(" ");
+
+// for(let i=0; i<arr.length; i++){
+//     let word = arr[i];
+//     let temp = word[0].toUpperCase() + word.substring(1,word.length-1) + word[word.length-1].toUpperCase();
+//     arr[i] = temp;
+// }
+
+// console.log(arr.join(" "));
+
+let str = "Sheetal";
+let arr = new Array(128).fill(0);
+
+for(let i=0; i<str.length; i++){
+    let ascii = str.charCodeAt(i);
+    arr[ascii] = arr[ascii] + 1;
 }
 
-console.log(count);
+let i=0;
+arr.forEach(val => {
+    if(val !== 0){
+        console.log(String.fromCharCode(i) + " => " + val);
+    }
+    i++;
+})
