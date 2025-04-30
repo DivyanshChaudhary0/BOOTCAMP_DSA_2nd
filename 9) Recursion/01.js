@@ -213,4 +213,3 @@ function printFibonacci(n){
 }
 
 printFibonacci(5);
-
