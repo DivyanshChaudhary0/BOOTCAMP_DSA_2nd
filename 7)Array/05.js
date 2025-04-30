@@ -130,16 +130,54 @@
 //     i++;
 // })
 
-let str = "Sheetal"
+// let str = "Sheetal"
+// let map = new Map();
+
+// for(let i=0; i<str.length; i++){
+//     if(map.has(str[i])){
+//         map.set(str[i], map.get(str[i]) + 1);
+//     }
+//     else map.set(str[i], 1);
+// }
+
+// for(let key of map.keys()){
+//     console.log(key + " => " + map.get(key));
+// }
+
+// let s1 = "car"
+// let s2 = "arcjj"
+
+// if(s1.length !== s2.length){
+//     console.log("Not anagram");
+//     return;
+// }
+
+// let map = new Map();
+
+// for(let char of s1){
+//     map.set(char, (map.get(char) || 0) + 1);
+// }
+
+// for(let char of s2){
+//     map.set(char, (map.get(char) || 0) - 1);
+// }
+
+// for(let key of map.keys()){
+//     if(map.get(key) !== 0){
+//         console.log("Not an anagram String");
+//         break;
+//     }
+// }
+
+// -------------(set map)--------------
+// leetcode 1832-771-575-645
+
+let arr = [1,2,3,4,1,2,3,4,4,4,3,2,1];
+
 let map = new Map();
 
-for(let i=0; i<str.length; i++){
-    if(map.has(str[i])){
-        map.set(str[i], map.get(str[i]) + 1);
-    }
-    else map.set(str[i], 1);
+for(let i=0; i<arr.length; i++){
+    map.set(arr[i], (map.get(arr[i]) || 0) + 1);
 }
 
-for(let key of map.keys()){
-    console.log(key + " => " + map.get(key));
-}
+console.log(map);
