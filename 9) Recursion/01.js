@@ -219,7 +219,7 @@ let arr = [3,3,9,9,5];
 let max = -Infinity, count = 0;
 
 for(let i=0; i<arr.length; i++){
-    count = (count + arr[i])%7;
+    count += arr[i];
     max = Math.max(count,max);
     if(count < 0) count = 0;
 }
