@@ -197,19 +197,31 @@ console.log(sumOfDigits(1234));
 // }
 
 
-function printFibonacci(n){
+// function printFibonacci(n){
 
-    const helper = (n,a,b) => {
-        if(n===0) return;
-        let c = a+b;
-        console.log(c);
-        a=b;
-        b=c;
-        helper(n-1,a,b)
-    }
+//     const helper = (n,a,b) => {
+//         if(n===0) return;
+//         let c = a+b;
+//         console.log(c);
+//         a=b;
+//         b=c;
+//         helper(n-1,a,b)
+//     }
 
-    helper(n,-1,1);
+//     helper(n,-1,1);
 
+// }
+
+// printFibonacci(5);
+
+let arr = [3,3,9,9,5];
+
+let max = -Infinity, count = 0;
+
+for(let i=0; i<arr.length; i++){
+    count = (count + arr[i])%7;
+    max = Math.max(count,max);
+    if(count < 0) count = 0;
 }
 
-printFibonacci(5);
+console.log(max);
