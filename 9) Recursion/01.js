@@ -115,47 +115,47 @@
 // }
 
 
-function printHello(n){
-    if(n === 0) return;
-    console.log("hello");
-    printHello(n-1);
-}
+// function printHello(n){
+//     if(n === 0) return;
+//     console.log("hello");
+//     printHello(n-1);
+// }
 
-printHello(5);
+// printHello(5);
 
-function printNumber(n){
-    if(n===0) return;
-    console.log(n);
-    printNumber(n-1);
-}
+// function printNumber(n){
+//     if(n===0) return;
+//     console.log(n);
+//     printNumber(n-1);
+// }
 
-printNumber(10);
+// printNumber(10);
 
-function printSum(n){
-    if(n === 0) return 0;
-    let sum = n + printSum(n-1);
-    return sum;
-}
+// function printSum(n){
+//     if(n === 0) return 0;
+//     let sum = n + printSum(n-1);
+//     return sum;
+// }
 
-console.log(printSum(5));
+// console.log(printSum(5));
 
-function printFact(n){
-    if(n===1 || n===0) return 1;
-    return n * printFact(n-1);
-}
+// function printFact(n){
+//     if(n===1 || n===0) return 1;
+//     return n * printFact(n-1);
+// }
 
-console.log(printFact(5));
+// console.log(printFact(5));
 
 
-function sumOfDigits(n){
-    n = Math.floor(n);
-    if(n > 0 && n < 10) return n;
-    let rem = n % 10;
-    let sum = rem + sumOfDigits(n/10)
-    return sum;
-}
+// function sumOfDigits(n){
+//     n = Math.floor(n);
+//     if(n > 0 && n < 10) return n;
+//     let rem = n % 10;
+//     let sum = rem + sumOfDigits(n/10)
+//     return sum;
+// }
 
-console.log(sumOfDigits(1234));
+// console.log(sumOfDigits(1234));
 
 // function gcd(a,b,min){
 //     if(a%min ==0 && b%min ==0) return min;
@@ -214,14 +214,34 @@ console.log(sumOfDigits(1234));
 
 // printFibonacci(5);
 
-let arr = [3,3,9,9,5];
+// let arr = [3,3,9,9,5];
 
-let max = -Infinity, count = 0;
+// let max = -Infinity, count = 0;
 
-for(let i=0; i<arr.length; i++){
-    count += arr[i];
-    max = Math.max(count,max);
-    if(count < 0) count = 0;
+// for(let i=0; i<arr.length; i++){
+//     count += arr[i];
+//     max = Math.max(count,max);
+//     if(count < 0) count = 0;
+// }
+
+// console.log(max);
+
+function minimumDistances(a) {
+    let n = a.length - 1;
+    let minDistance = Infinity,dis = 0;
+    
+    for(let i=0; i<n; i++){
+        for(let j=i+1; j<n; j++){
+            if(a[i] === a[j]){
+                dis = j-i;
+                if(dis < minDistance) minDistance = dis;
+                break;
+            }
+        }
+        
+    }
+    
+    return minDistance === Infinity ? -1 : minDistance;
 }
 
-console.log(max);
+console.log(minimumDistances([7,2,3,4,3,6,7]));
