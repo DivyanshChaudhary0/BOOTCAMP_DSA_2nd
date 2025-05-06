@@ -13,3 +13,14 @@ function funnyString(s) {
 
     return "Funny";
 }
+
+function designerPdfViewer(h, word) {
+    let max = 0;
+
+    for (let i = 0; i < word.length; i++) {
+        let index = word.charCodeAt(i) - 97; // 'a' is 97
+        max = Math.max(max, h[index]);
+    }
+
+    return max * word.length;
+}
