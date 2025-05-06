@@ -60,3 +60,4 @@ function marsExploration(s) {
     
     return count;
 }
+
