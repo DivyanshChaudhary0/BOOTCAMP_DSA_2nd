@@ -1,6 +1,5 @@
 
 function funnyString(s) {
-    // Reverse the string manually
     let rev = s.split('').reverse().join('');
     
     for (let i = 1; i < s.length; i++) {
