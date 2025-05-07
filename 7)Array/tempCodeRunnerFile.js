@@ -110,3 +110,24 @@ let secondHalf = str.slice(mid);       // "def"
 
 console.log(firstHalf);   // Output: "abc"
 console.log(secondHalf);  // Output: "def"
+
+function kaprekarNumber(n){
+    let square = n*n;
+    let sum = 0;
+
+    while(square > 0){
+        let rem = square % 10;
+        sum += rem;
+        square = Math.floor(square/10);
+    }
+
+    return sum === n ? "YES" : "NO"
+}
+
+console.log(kaprekarNumber(9));
+
+function squares(a, b) {
+    const start = Math.ceil(Math.sqrt(a));
+    const end = Math.floor(Math.sqrt(b));
+    return end - start + 1;
+}
