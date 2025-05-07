@@ -61,3 +61,44 @@ function marsExploration(s) {
     return count;
 }
 
+function pangrams(s) {
+    let set = new Set();
+
+    for (let i = 0; i < s.length; i++) {
+        let char = s[i].toLowerCase();
+        if (char >= 'a' && char <= 'z') {
+            set.add(char);
+        }
+    }
+
+    return set.size === 26 ? "pangram" : "not pangram";
+}
+
+function anagram(s) {
+    if (s.length % 2 !== 0) return -1;
+
+    let mid = s.length / 2;
+    let firstHalf = s.slice(0, mid);
+    let secondHalf = s.slice(mid);
+
+    let freq = new Array(26).fill(0);
+
+    // Count characters in first half
+    for (let i = 0; i < firstHalf.length; i++) {
+        freq[firstHalf.charCodeAt(i) - 97]++;
+    }
+
+    // Subtract characters seen in second half
+    for (let i = 0; i < secondHalf.length; i++) {
+        freq[secondHalf.charCodeAt(i) - 97]--;
+    }
+
+    // Only count positive differences (i.e., how many need to change in firstHalf)
+    let count = 0;
+    for (let i = 0; i < 26; i++) {
+        if (freq[i] > 0) count += freq[i];
+    }
+
+    return count;
+}
+
