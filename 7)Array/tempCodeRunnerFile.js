@@ -102,3 +102,11 @@ function anagram(s) {
     return count;
 }
 
+let str = "abcdef";
+let mid = Math.floor(str.length / 2);
+
+let firstHalf = str.slice(0, mid);      // "abc"
+let secondHalf = str.slice(mid);       // "def"
+
+console.log(firstHalf);   // Output: "abc"
+console.log(secondHalf);  // Output: "def"
