@@ -131,3 +131,16 @@ function squares(a, b) {
     const end = Math.floor(Math.sqrt(b));
     return end - start + 1;
 }
+
+function dayOfProgrammer(year) {
+    if (year === 1918) {
+        return `26.09.${year}`; // Special case
+    } else if (
+        (year < 1918 && year % 4 === 0) || // Julian
+        (year > 1918 && (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0))) // Gregorian
+    ) {
+        return `12.09.${year}`;
+    } else {
+        return `13.09.${year}`;
+    }
+}
