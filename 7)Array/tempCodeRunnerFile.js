@@ -163,3 +163,24 @@ const square = memoize();
 console.log(square(5));
 console.log(square(5));
 
+function pageCount(n, p) {
+    let fromFront = 0;
+    let page = 1;
+
+    // Count flips from the front
+    while (page < p) {
+        page += 2;
+        fromFront++;
+    }
+
+    let fromBack = 0;
+    page = n % 2 === 0 ? n - 1 : n - 2;
+
+    // Count flips from the back
+    while (page > p) {
+        page -= 2;
+        fromBack++;
+    }
+
+    return Math.min(fromFront, fromBack);
+}
