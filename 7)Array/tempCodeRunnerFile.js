@@ -164,6 +164,7 @@ const square = memoize();
 console.log(square(5));
 console.log(square(5));
 
+
 function pageCount(n, p) {
     let fromFront = 0;
     let page = 1;
@@ -200,3 +201,13 @@ function convertToBinary(n){
 console.log(convertToBinary(11));
 
 
+function convertToDecimal(n){
+  n = n.toString().split("").reverse();
+  let ans = 0;
+  for(let i=0; i<n.length; i++){
+    ans += n[i] * Math.pow(2,i);
+  }
+  return ans;
+}
+
+console.log(convertToDecimal(1011));
