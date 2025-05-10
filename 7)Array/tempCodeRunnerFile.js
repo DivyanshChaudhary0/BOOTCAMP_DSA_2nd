@@ -1,3 +1,4 @@
+
 function funnyString(s) {
   let rev = s.split("").reverse().join("");
 
@@ -184,3 +185,18 @@ function pageCount(n, p) {
 
     return Math.min(fromFront, fromBack);
 }
+
+
+function convertToBinary(n){
+  let res = "";
+  while(n>0){
+    if(n%2==1) res += 1;
+    else res += 0;
+    n = Math.floor(n/2);
+  }
+  return res.split("").reverse().join("");
+}
+
+console.log(convertToBinary(11));
+
+
