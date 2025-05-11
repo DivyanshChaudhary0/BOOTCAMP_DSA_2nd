@@ -247,3 +247,22 @@ function getTotalX(a, b) {
 
     return count;
 }
+
+
+function countingSort(arr) {
+    let freq = new Array(100).fill(0);
+
+    for (let num of arr) {
+        freq[num]++;
+    }
+
+    let sorted = [];
+    for (let i = 0; i < freq.length; i++) {
+        while (freq[i] > 0) {
+            sorted.push(i);
+            freq[i]--;
+        }
+    }
+
+    return sorted;
+}
