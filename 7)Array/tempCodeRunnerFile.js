@@ -212,3 +212,38 @@ function convertToDecimal(n){
 
 console.log(convertToDecimal(1011));
 
+
+function gcd(x, y) {
+    while (y) {
+        let temp = y;
+        y = x % y;
+        x = temp;
+    }
+    return x;
+}
+
+function lcm(x, y) {
+    return (x * y) / gcd(x, y);
+}
+
+function getTotalX(a, b) {
+    // Step 1: Find LCM of array a
+    let l = a[0];
+    for (let i = 1; i < a.length; i++) {
+        l = lcm(l, a[i]);
+    }
+
+    // Step 2: Find GCD of array b
+    let g = b[0];
+    for (let i = 1; i < b.length; i++) {
+        g = gcd(g, b[i]);
+    }
+
+    // Step 3: Count multiples of l that divide g
+    let count = 0;
+    for (let i = l; i <= g; i += l) {
+        if (g % i === 0) count++;
+    }
+
+    return count;
+}
