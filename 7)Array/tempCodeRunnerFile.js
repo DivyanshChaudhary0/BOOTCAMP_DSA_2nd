@@ -305,3 +305,25 @@ function minimumAbsoluteDifference(arr) {
 
     return min;
 }
+
+function luckBalance(k, contests) {
+    let count = 0;
+    let newArr = [];
+    for(let i=0; i<contests.length; i++){
+        if(contests[i][1] === 0) count += contests[i][0];
+        else newArr.push(contests[i][0]);
+    }
+    
+    newArr.sort((a,b) => b-a);
+    
+    let sum = 0;
+    for(let i=0; i<k; i++){
+        sum += newArr[i];
+    }
+    
+    for(let i=k; i<newArr.length; i++){
+        sum -= newArr[i];
+    }
+    
+    return sum + count;
+}
