@@ -293,3 +293,15 @@ function separateNumbers(s) {
     
     if(!found) console.log("NO")
 }
+
+function minimumAbsoluteDifference(arr) {
+    arr.sort((a, b) => a - b);
+    let min = Infinity;
+
+    for (let i = 1; i < arr.length; i++) {
+        let diff = Math.abs(arr[i] - arr[i - 1]);
+        min = Math.min(min, diff);
+    }
+
+    return min;
+}
