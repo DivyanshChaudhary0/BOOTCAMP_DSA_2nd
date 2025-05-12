@@ -266,3 +266,30 @@ function countingSort(arr) {
 
     return sorted;
 }
+
+function separateNumbers(s) {
+    let found = false;
+    
+    for(let i=1; i <= Math.floor(s.length/2); i++){
+        let firstNum = s.slice(0,i);
+        
+        if (firstNum.startsWith("0")) continue;
+        
+        let num = BigInt(firstNum);
+        let builtStr = "";
+        
+        while(builtStr.length < s.length){
+            builtStr += num;
+            num += 1n;
+        }
+        
+        if (builtStr === s) {
+            console.log(`YES ${firstNum}`);
+            found = true;
+            break;
+        }
+    
+    }
+    
+    if(!found) console.log("NO")
+}
