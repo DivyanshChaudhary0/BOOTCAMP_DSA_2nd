@@ -307,23 +307,28 @@ function minimumAbsoluteDifference(arr) {
 }
 
 function luckBalance(k, contests) {
-    let count = 0;
-    let newArr = [];
-    for(let i=0; i<contests.length; i++){
-        if(contests[i][1] === 0) count += contests[i][0];
-        else newArr.push(contests[i][0]);
+    let luck = 0;
+    const important = [];
+
+    for (const [value, importance] of contests) {
+        if (importance === 0) {
+            luck += value; // always lose unimportant contests
+        } else {
+            important.push(value); // store important ones
+        }
     }
-    
-    newArr.sort((a,b) => b-a);
-    
-    let sum = 0;
-    for(let i=0; i<k; i++){
-        sum += newArr[i];
+
+    // Sort important contests in descending order
+    important.sort((a, b) => b - a);
+
+    // Lose the k most valuable important contests
+    for (let i = 0; i < important.length; i++) {
+        if (i < k) {
+            luck += important[i];
+        } else {
+            luck -= important[i]; // have to win the rest
+        }
     }
-    
-    for(let i=k; i<newArr.length; i++){
-        sum -= newArr[i];
-    }
-    
-    return sum + count;
+
+    return luck;
 }
