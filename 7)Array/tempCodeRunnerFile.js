@@ -360,3 +360,20 @@ function happyLadybugs(b) {
 
     return "YES";
 }
+
+function circularArrayRotation(a, k, queries) {
+    let n = a.length;
+    k = k % n;
+
+    let rotated = new Array(n);
+    for (let i = 0; i < n; i++) {
+        rotated[(i + k) % n] = a[i];
+    }
+
+    let result = [];
+    for (let i = 0; i < queries.length; i++) {
+        result.push(rotated[queries[i]]);
+    }
+
+    return result;
+}
