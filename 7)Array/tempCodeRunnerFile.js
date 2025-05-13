@@ -332,3 +332,31 @@ function luckBalance(k, contests) {
 
     return luck;
 }
+
+function happyLadybugs(b) {
+    const freq = new Map();
+    let hasEmpty = false;
+
+    for (let ch of b) {
+        if (ch === '_') {
+            hasEmpty = true;
+        } else {
+            freq.set(ch, (freq.get(ch) || 0) + 1);
+        }
+    }
+
+    if (!hasEmpty) {
+        for (let i = 0; i < b.length; i++) {
+            if ((b[i] !== b[i - 1]) && (b[i] !== b[i + 1])) {
+                return "NO";
+            }
+        }
+        return "YES";
+    }
+
+    for (let [key, value] of freq) {
+        if (value < 2) return "NO";
+    }
+
+    return "YES";
+}
