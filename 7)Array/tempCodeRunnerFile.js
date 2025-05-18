@@ -377,3 +377,11 @@ function circularArrayRotation(a, k, queries) {
 
     return result;
 }
+
+function takeString(s){
+  let obj = {};
+  for(let i=0; i<s.length; i++){
+    obj[s[i]]++;
+  }
+  return obj;
+}
