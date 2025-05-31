@@ -244,4 +244,16 @@ function minimumDistances(a) {
     return minDistance === Infinity ? -1 : minDistance;
 }
 
-console.log(minimumDistances([7,2,3,4,3,6,7]));
+// console.log(minimumDistances([7,2,3,4,3,6,7]));
+
+Array.prototype.selfSplice = function(index,itemCount,...args){
+    let temp = index;
+    for(let i=0; i<itemCount; i++){
+        while(index < Array.length){
+            Array.index
+        }
+    }
+}
+
+let arr = [1,2,3,4,5];
+arr.selfSplice(1,2)
