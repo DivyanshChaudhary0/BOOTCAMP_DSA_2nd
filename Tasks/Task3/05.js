@@ -1,7 +1,6 @@
 
 const fs = require("fs");
 
-
 setImmediate(() => console.log("Immediate 1"));
 
 setTimeout(() => console.log("Timeout 1"),0);
@@ -13,7 +12,6 @@ fs.readFile("./Tasks/Task3/hello.text","utf-8", () => {
 })
 
 process.nextTick(() => console.log("next tick 1"));
-
 
 
 setImmediate(() => console.log("Immediate 1"));
